@@ -38,7 +38,7 @@ download_release() {
 	version="$1"
 	filename="$2"
 	os="$(uname -s)"
-	arch="$(uname -m)"
+	arch="$(uname -m | sed 's/aarch64/arm64/')"
 	url="$GH_REPO/releases/download/v${version}/ksops_${version}_${os}_${arch}.tar.gz"
 
 	echo "* Downloading $TOOL_NAME release $version..."
